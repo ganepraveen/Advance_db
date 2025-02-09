@@ -8,4 +8,34 @@ This repository contains my **Entity-Relation (ER) Diagrams** assignment for the
 3. **Real Estate Listing System** – Handles properties, agents, and clients.
 
 ## 📂 Repository Structure
-db-assignment-er-diagrams/ │── diagrams/ # Folder containing Graphviz & Mermaid diagrams │ ├── library.dot # Chen Notation for Library Management System │ ├── library.mmd # Crow's Foot Notation for Library Management System │ ├── restaurant.dot # Chen Notation for Restaurant Reservation System │ ├── restaurant.mmd # Crow's Foot Notation for Restaurant Reservation System │ ├── real_estate.dot # Chen Notation for Real Estate Listing System │ ├── real_estate.mmd # Crow's Foot Notation for Real Estate Listing System │── report.qmd # Quarto report file (Main Assignment Report) │── report.html # Rendered HTML Report (Submission File) │── report.pdf # (Optional) Rendered PDF Report │── README.md #
+diagrams/: Folder containing Graphviz and Mermaid diagrams for Chen and Crow's Foot Notations.
+
+library.dot: Chen Notation for the Library Management System.
+library.mmd: Crow's Foot Notation for the Library Management System.
+restaurant.dot: Chen Notation for the Restaurant Reservation System.
+restaurant.mmd: Crow's Foot Notation for the Restaurant Reservation System.
+real_estate.dot: Chen Notation for the Real Estate Listing System.
+real_estate.mmd: Crow's Foot Notation for the Real Estate Listing System.
+report.qmd: The main Quarto report file containing the explanation of the ER diagrams.
+
+report.html: Rendered HTML report to be submitted for the assignment.
+
+README.md: This file providing details about the project.
+
+## 📜 Assignment Details
+This repository covers the following three scenarios for ER diagrams:
+
+1)Library Management System
+A system to manage books, authors, patrons, and borrowings.
+
+2)Restaurant Reservation System
+A system to manage restaurant reservations, tables, customers, and reservations.
+
+3)Real Estate Listing System
+A system to manage property listings, agents, clients, and transactions.
+
+
+## 🔧 Prerequisites
+Graphviz or any tool supporting .dot files for rendering Chen Notation diagrams.
+Mermaid or any tool supporting .mmd files for rendering Crow's Foot Notation diagrams.
+Quarto for rendering the .qmd report file into HTML file.
