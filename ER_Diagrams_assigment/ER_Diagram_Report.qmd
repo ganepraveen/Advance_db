@@ -1,0 +1,174 @@
+---
+title: "Entity-Relation Diagrams Report"
+author: "Praveen Kumar Manikanth Gane"
+date: "09-Feb-2025"
+format:
+  html: default
+---
+
+# **Entity-Relation Diagrams (ERD) Report**
+
+## **Overview**
+This report presents ER diagrams for three selected database systems: 
+
+- **Library Management System**
+- **Restaurant Reservation System**
+- **Real Estate Listing System**
+
+Each system includes both **Chen Notation (Graphviz)** and **Crow's Foot Notation (Mermaid)** ER diagrams. 
+
+## **1. Library Management System**
+### **Design Choices**
+- A `Book` entity has a unique `Book_ID`, `Title`, and `Author`.
+- A `Member` entity has `Member_ID`, `Name`, and `Membership_Date`.
+- A `Loan` entity tracks borrowed books, containing `Loan_ID`, `Loan_Date`, and `Return_Date`.
+- Relationship: Members borrow books via loans.
+
+### **Chen Notation (Graphviz)**
+```{dot}
+digraph LibraryManagement {
+    node [shape=oval];
+
+    Book [label="Book\n(Book_ID, Title, Author)"];
+    Member [label="Member\n(Member_ID, Name, Membership_Date)"];
+    Loan [label="Loan\n(Loan_ID, Loan_Date, Return_Date)"];
+
+    edge [dir=none];
+
+    Member -> Loan [label="borrows"];
+    Loan -> Book [label="includes"];
+}
+```
+
+### **Crow’s Foot Notation (Mermaid)**
+```{mermaid}
+erDiagram
+    BOOK {
+        int Book_ID PK
+        string Title
+        string Author
+    }
+    MEMBER {
+        int Member_ID PK
+        string Name
+        date Membership_Date
+    }
+    LOAN {
+        int Loan_ID PK
+        date Loan_Date
+        date Return_Date
+    }
+
+    MEMBER ||--o{ LOAN : borrows
+    BOOK ||--o{ LOAN : includes
+```
+
+## **2. Restaurant Reservation System**
+### **Design Choices**
+- A `Customer` has `Customer_ID`, `Name`, and `Contact_Number`.
+- A `Reservation` tracks booking with `Reservation_ID`, `Date`, and `Time`.
+- A `Table` entity holds `Table_Number`, `Seating_Capacity`, and `Location`.
+- Relationship: Customers make reservations for tables.
+
+### **Chen Notation (Graphviz)**
+```{dot}
+digraph RestaurantReservation {
+    node [shape=oval];
+
+    Customer [label="Customer\n(Customer_ID, Name, Contact_Number)"];
+    Reservation [label="Reservation\n(Reservation_ID, Date, Time)"];
+    Table [label="Table\n(Table_Number, Seating_Capacity, Location)"];
+
+    edge [dir=none];
+
+    Customer -> Reservation [label="makes"];
+    Reservation -> Table [label="assigned to"];
+}
+```
+
+### **Crow’s Foot Notation (Mermaid)**
+```{mermaid}
+erDiagram
+    CUSTOMER {
+        int Customer_ID PK
+        string Name
+        string Contact_Number
+    }
+    RESERVATION {
+        int Reservation_ID PK
+        date Date
+        time Time
+    }
+    TABLE {
+        int Table_Number PK
+        int Seating_Capacity
+        string Location
+    }
+
+    CUSTOMER ||--o{ RESERVATION : makes
+    TABLE ||--o{ RESERVATION : assigned_to
+```
+
+## **3. Real Estate Listing System**
+### **Design Choices**
+- A `Property` entity has `Property_ID`, `Address`, and `Listing_Price`.
+- An `Agent` has `Agent_ID`, `Name`, and `Contact_Info`.
+- A `Client` has `Client_ID`, `Name`, and `Budget`.
+- Relationship: Agents list properties, clients show interest in properties.
+
+### **Chen Notation (Graphviz)**
+```{dot}
+digraph RealEstateListing {
+    node [shape=oval];
+
+    Property [label="Property\n(Property_ID, Address, Listing_Price)"];
+    Agent [label="Agent\n(Agent_ID, Name, Contact_Info)"];
+    Client [label="Client\n(Client_ID, Name, Budget)"];
+    
+    edge [dir=none];
+
+    Agent -> Property [label="lists"];
+    Client -> Property [label="interested in"];
+}
+```
+
+### **Crow’s Foot Notation (Mermaid)**
+```{mermaid}
+erDiagram
+    PROPERTY {
+        int Property_ID PK
+        string Address
+        decimal Listing_Price
+    }
+    AGENT {
+        int Agent_ID PK
+        string Name
+        string Contact_Info
+    }
+    CLIENT {
+        int Client_ID PK
+        string Name
+        decimal Budget
+    }
+
+    AGENT ||--o{ PROPERTY : lists
+    CLIENT }|--|{ PROPERTY : interested_in
+```
+
+## **Relation Set Schemas**
+- **Library Management System**
+  - `Book(Book_ID, Title, Author)`
+  - `Member(Member_ID, Name, Membership_Date)`
+  - `Loan(Loan_ID, Loan_Date, Return_Date, Member_ID FK, Book_ID FK)`
+- **Restaurant Reservation System**
+  - `Customer(Customer_ID, Name, Contact_Number)`
+  - `Reservation(Reservation_ID, Date, Time, Customer_ID FK, Table_Number FK)`
+  - `Table(Table_Number, Seating_Capacity, Location)`
+- **Real Estate Listing System**
+  - `Property(Property_ID, Address, Listing_Price, Agent_ID FK)`
+  - `Agent(Agent_ID, Name, Contact_Info)`
+  - `Client(Client_ID, Name, Budget)`
+  - `Interest(Client_ID FK, Property_ID FK)`
+
+## **Conclusion**
+This report details the ER diagrams and design choices for the selected database systems. The **Chen Notation (Graphviz)** provides a **conceptual model**, while **Crow’s Foot Notation (Mermaid)** represents **relationships and cardinality**. Each system has unique design decisions to reflect real-world database structuring.
