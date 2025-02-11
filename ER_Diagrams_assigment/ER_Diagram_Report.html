@@ -79,6 +79,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p><strong><code>GitHub Repository</code>:</strong> <a href="https://github.com/ganepraveen/Advance_db/tree/main/ER_Diagrams_assigment">https://github.com/ganepraveen/Advance_db/tree/main/ER_Diagrams_assigment</a></p>
 <section id="entity-relation-diagrams-erd-report" class="level1">
 <h1><strong>Entity-Relation Diagrams (ERD) Report</strong></h1>
 <section id="overview" class="level2">
@@ -89,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Restaurant Reservation System</strong></li>
 <li><strong>Real Estate Listing System</strong></li>
 </ul>
-<p>Each system includes both <strong>Chen Notation (Graphviz)</strong> and <strong>Crow’s Foot Notation (Mermaid)</strong> ER diagrams.</p>
+<p>Each system includes both <strong>Chen Notation </strong> and <strong>Crow’s Foot Notation </strong> ER diagrams.</p>
 </section>
 <section id="library-management-system" class="level2">
 <h2 class="anchored" data-anchor-id="library-management-system"><strong>1. Library Management System</strong></h2>
@@ -102,8 +103,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Relationship: Members borrow books via loans.</li>
 </ul>
 </section>
-<section id="chen-notation-graphviz" class="level3">
-<h3 class="anchored" data-anchor-id="chen-notation-graphviz"><strong>Chen Notation (Graphviz)</strong></h3>
+<section id="chen-notation" class="level3">
+<h3 class="anchored" data-anchor-id="chen-notation"><strong>Chen Notation </strong></h3>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -154,8 +155,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="crows-foot-notation-mermaid" class="level3">
-<h3 class="anchored" data-anchor-id="crows-foot-notation-mermaid"><strong>Crow’s Foot Notation (Mermaid)</strong></h3>
+<section id="crows-foot-notation" class="level3">
+<h3 class="anchored" data-anchor-id="crows-foot-notation"><strong>Crow’s Foot Notation </strong></h3>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -180,6 +181,7 @@ ul.task-list li input[type="checkbox"] {
 
     MEMBER ||--o{ LOAN : borrows
     BOOK ||--o{ LOAN : includes
+
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -199,8 +201,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Relationship: Customers make reservations for tables.</li>
 </ul>
 </section>
-<section id="chen-notation-graphviz-1" class="level3">
-<h3 class="anchored" data-anchor-id="chen-notation-graphviz-1"><strong>Chen Notation (Graphviz)</strong></h3>
+<section id="chen-notation-1" class="level3">
+<h3 class="anchored" data-anchor-id="chen-notation-1"><strong>Chen Notation </strong></h3>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -251,8 +253,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="crows-foot-notation-mermaid-1" class="level3">
-<h3 class="anchored" data-anchor-id="crows-foot-notation-mermaid-1"><strong>Crow’s Foot Notation (Mermaid)</strong></h3>
+<section id="crows-foot-notation-1" class="level3">
+<h3 class="anchored" data-anchor-id="crows-foot-notation-1"><strong>Crow’s Foot Notation </strong></h3>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -277,6 +279,7 @@ ul.task-list li input[type="checkbox"] {
 
     CUSTOMER ||--o{ RESERVATION : makes
     TABLE ||--o{ RESERVATION : assigned_to
+
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -296,8 +299,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Relationship: Agents list properties, clients show interest in properties.</li>
 </ul>
 </section>
-<section id="chen-notation-graphviz-2" class="level3">
-<h3 class="anchored" data-anchor-id="chen-notation-graphviz-2"><strong>Chen Notation (Graphviz)</strong></h3>
+<section id="chen-notation-2" class="level3">
+<h3 class="anchored" data-anchor-id="chen-notation-2"><strong>Chen Notation </strong></h3>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -348,8 +351,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="crows-foot-notation-mermaid-2" class="level3">
-<h3 class="anchored" data-anchor-id="crows-foot-notation-mermaid-2"><strong>Crow’s Foot Notation (Mermaid)</strong></h3>
+<section id="crows-foot-notation-2" class="level3">
+<h3 class="anchored" data-anchor-id="crows-foot-notation-2"><strong>Crow’s Foot Notation </strong></h3>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -405,10 +408,15 @@ ul.task-list li input[type="checkbox"] {
 <li><code>Interest(Client_ID FK, Property_ID FK)</code></li>
 </ul></li>
 </ul>
+<hr>
 </section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion"><strong>Conclusion</strong></h2>
-<p>This report details the ER diagrams and design choices for the selected database systems. The <strong>Chen Notation (Graphviz)</strong> provides a <strong>conceptual model</strong>, while <strong>Crow’s Foot Notation (Mermaid)</strong> represents <strong>relationships and cardinality</strong>. Each system has unique design decisions to reflect real-world database structuring.</p>
+<section id="reflection" class="level2">
+<h2 class="anchored" data-anchor-id="reflection"><strong>Reflection</strong></h2>
+<p><strong>Design Choices</strong> Creating the ER diagrams for the Library Management System, Restaurant Reservation System, and Real Estate Listing System involved some important decisions. I chose the entities, attributes, and relationships to best represent each system. For example, in the Library Management System, I made a separate entity for the loans to include details like loan dates. This made the system more detailed and flexible.</p>
+<p><strong>Challenges Faced</strong> One of the main challenges was keeping the diagrams clear and easy to understand while showing all the needed details. Each system had multiple entities and relationships, so I had to make sure the diagrams didn’t get too cluttered. It was also tricky to decide whether to use composite attributes or create separate entities for related information. I tried to find a balance between simplicity and practicality.</p>
+<p><strong>Lessons Learned</strong> This assignment taught me a lot about planning and designing databases. Creating the ER diagrams helped me understand how different parts of the system interact. I also learned how important clear and concise documentation is, as it makes the project easier to use.</p>
+<p><strong>Overall Experience</strong> I enjoyed working on this assignment. It gave me hands-on experience with creating ER diagrams and a better understanding of database design. I liked turning real-world scenarios into structured database models. If I could improve something, I would explore different design patterns and try other modeling approaches to make the systems even better.</p>
+<p><strong>Future Improvements</strong> In future assignments, I want to take on more complex scenarios and try advanced ER diagram notations. I’ll also focus on improving my documentation skills to make my reports more engaging and easy to follow.</p>
 </section>
 </section>
 

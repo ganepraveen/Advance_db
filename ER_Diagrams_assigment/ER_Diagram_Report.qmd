@@ -6,6 +6,8 @@ format:
   html: default
 ---
 
+**`GitHub Repository`:** [https://github.com/ganepraveen/Advance_db/tree/main/ER_Diagrams_assigment](https://github.com/ganepraveen/Advance_db/tree/main/ER_Diagrams_assigment)
+
 # **Entity-Relation Diagrams (ERD) Report**
 
 ## **Overview**
@@ -15,7 +17,7 @@ This report presents ER diagrams for three selected database systems:
 - **Restaurant Reservation System**
 - **Real Estate Listing System**
 
-Each system includes both **Chen Notation (Graphviz)** and **Crow's Foot Notation (Mermaid)** ER diagrams. 
+Each system includes both **Chen Notation ** and **Crow's Foot Notation ** ER diagrams. 
 
 ## **1. Library Management System**
 ### **Design Choices**
@@ -24,7 +26,7 @@ Each system includes both **Chen Notation (Graphviz)** and **Crow's Foot Notatio
 - A `Loan` entity tracks borrowed books, containing `Loan_ID`, `Loan_Date`, and `Return_Date`.
 - Relationship: Members borrow books via loans.
 
-### **Chen Notation (Graphviz)**
+### **Chen Notation **
 ```{dot}
 digraph LibraryManagement {
     node [shape=oval];
@@ -38,9 +40,11 @@ digraph LibraryManagement {
     Member -> Loan [label="borrows"];
     Loan -> Book [label="includes"];
 }
+
+}
 ```
 
-### **Crow’s Foot Notation (Mermaid)**
+### **Crow’s Foot Notation **
 ```{mermaid}
 erDiagram
     BOOK {
@@ -61,6 +65,7 @@ erDiagram
 
     MEMBER ||--o{ LOAN : borrows
     BOOK ||--o{ LOAN : includes
+
 ```
 
 ## **2. Restaurant Reservation System**
@@ -70,7 +75,7 @@ erDiagram
 - A `Table` entity holds `Table_Number`, `Seating_Capacity`, and `Location`.
 - Relationship: Customers make reservations for tables.
 
-### **Chen Notation (Graphviz)**
+### **Chen Notation **
 ```{dot}
 digraph RestaurantReservation {
     node [shape=oval];
@@ -86,7 +91,7 @@ digraph RestaurantReservation {
 }
 ```
 
-### **Crow’s Foot Notation (Mermaid)**
+### **Crow’s Foot Notation **
 ```{mermaid}
 erDiagram
     CUSTOMER {
@@ -107,6 +112,7 @@ erDiagram
 
     CUSTOMER ||--o{ RESERVATION : makes
     TABLE ||--o{ RESERVATION : assigned_to
+
 ```
 
 ## **3. Real Estate Listing System**
@@ -116,7 +122,7 @@ erDiagram
 - A `Client` has `Client_ID`, `Name`, and `Budget`.
 - Relationship: Agents list properties, clients show interest in properties.
 
-### **Chen Notation (Graphviz)**
+### **Chen Notation **
 ```{dot}
 digraph RealEstateListing {
     node [shape=oval];
@@ -130,9 +136,10 @@ digraph RealEstateListing {
     Agent -> Property [label="lists"];
     Client -> Property [label="interested in"];
 }
+
 ```
 
-### **Crow’s Foot Notation (Mermaid)**
+### **Crow’s Foot Notation **
 ```{mermaid}
 erDiagram
     PROPERTY {
@@ -170,5 +177,21 @@ erDiagram
   - `Client(Client_ID, Name, Budget)`
   - `Interest(Client_ID FK, Property_ID FK)`
 
-## **Conclusion**
-This report details the ER diagrams and design choices for the selected database systems. The **Chen Notation (Graphviz)** provides a **conceptual model**, while **Crow’s Foot Notation (Mermaid)** represents **relationships and cardinality**. Each system has unique design decisions to reflect real-world database structuring.
+---
+
+## **Reflection**
+
+**Design Choices**
+Creating the ER diagrams for the Library Management System, Restaurant Reservation System, and Real Estate Listing System involved some important decisions. I chose the entities, attributes, and relationships to best represent each system. For example, in the Library Management System, I made a separate entity for the loans to include details like loan dates. This made the system more detailed and flexible.
+
+**Challenges Faced**
+One of the main challenges was keeping the diagrams clear and easy to understand while showing all the needed details. Each system had multiple entities and relationships, so I had to make sure the diagrams didn't get too cluttered. It was also tricky to decide whether to use composite attributes or create separate entities for related information. I tried to find a balance between simplicity and practicality.
+
+**Lessons Learned**
+This assignment taught me a lot about planning and designing databases. Creating the ER diagrams helped me understand how different parts of the system interact. I also learned how important clear and concise documentation is, as it makes the project easier to use.
+
+**Overall Experience**
+I enjoyed working on this assignment. It gave me hands-on experience with creating ER diagrams and a better understanding of database design. I liked turning real-world scenarios into structured database models. If I could improve something, I would explore different design patterns and try other modeling approaches to make the systems even better.
+
+**Future Improvements**
+In future assignments, I want to take on more complex scenarios and try advanced ER diagram notations. I'll also focus on improving my documentation skills to make my reports more engaging and easy to follow.
