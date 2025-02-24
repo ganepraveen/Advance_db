@@ -1,1 +1,117 @@
 
+---
+title: "Customer Shopping Trends - Entity Relationship Model"
+author: "Praveen Kumar Manikanth Gane"
+date: "24-Feb-25"
+**`GitHub Repository`:** [https://github.com/ganepraveen/Advance_db/tree/main/ER_Diagrams_assigment/ER_Diagrams_assigment/ER _Models_HW3](https://github.com/ganepraveen/ER_Diagrams_assigment/ER _Models_HW3/ER_Diagrams_assigment/ER _Models_HW3)
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    df_print: paged
+format: html
+---
+
+# Project Description
+This report Documents the process of extarcting entities,attributes and relationship from the customershopping dataset.
+and the processed information generated into a Entity-Relationship (ER) model using Crow's Foot Notation. 
+
+# Dataset Overview
+The dataset contains customer shopping behavior data, including demographic details, product preferences, and purchasing patterns.
+
+# Entity Identification and Attributes
+
+## **Customer Entity**
+- **Primary Key:** `Customer ID`
+- Attributes: `Age`, `Gender`, `Location`, `Subscription Status`
+
+## **Product Entity**
+- **Primary Key:** `Item Purchased`
+- Attributes: `Category`, `Size`, `Color`, `Season`
+
+## **Purchase Entity**
+- **Primary Key:** `Purchase ID`
+- **Foreign Keys:** `Customer ID` (references `Customer`), `Item Purchased` (references `Product`)
+- Attributes: `Purchase Amount`, `Review Rating`, `Discount Applied`, `Promo Code Used`, `Payment Method`, `Shipping Type`
+
+## **Payment Entity**
+- **Primary Key:** `Customer ID`
+- Attributes: `Preferred Payment Method`
+
+## **Shipping Entity**
+- **Primary Key:** `Customer ID`
+- Attributes: `Shipping Type`
+
+## **Purchase Frequency Entity**
+- **Primary Key:** `Customer ID`
+- Attributes: `Previous Purchases`, `Frequency Of Purchases`
+
+# Relationships and Cardinality
+- A **Customer** can place multiple **Purchases** (1:M)
+- A **Purchase** includes one **Product** (M:1)
+- A **Customer** can have multiple **Payments** (1:M)
+- A **Customer** can have multiple **Shipping** preferences (1:M)
+- A **Customer** has a **Purchase Frequency** record (1:1)
+
+# ER Diagram
+Below is the Entity-Relationship Diagram in Crow’s Foot Notation.
+
+```{mermaid}
+erDiagram
+    CUSTOMER ||--o{ PURCHASE : places
+    CUSTOMER ||--o{ PAYMENT : has
+    CUSTOMER ||--o{ SHIPPING : has
+    CUSTOMER ||--|| PURCHASE_FREQUENCY : has
+    PURCHASE }o--|| PRODUCT : includes
+    
+    CUSTOMER {
+        int CustomerID PK
+        int Age
+        string Gender
+        string Location
+        string SubscriptionStatus
+    }
+    
+    PRODUCT {
+        string ItemPurchased PK
+        string Category
+        string Size
+        string Color
+        string Season
+    }
+    
+    PURCHASE {
+        int PurchaseID PK
+        int CustomerID FK
+        string ItemPurchased FK
+        float PurchaseAmount
+        float ReviewRating
+        string DiscountApplied
+        string PromoCodeUsed
+        string PaymentMethod
+        string ShippingType
+    }
+    
+    PAYMENT {
+        int CustomerID PK
+        string PreferredPaymentMethod
+    }
+    
+    SHIPPING {
+        int CustomerID PK
+        string ShippingType
+    }
+    
+    PURCHASE_FREQUENCY {
+        int CustomerID PK
+        int PreviousPurchases
+        string FrequencyOfPurchases
+    }
+```
+
+
+
+# Conclusion
+This ER model provides the detailed representation of the customer dataset ensuring database design , data mangement and importance of relationship between the attributes of differenrt tables.
+
