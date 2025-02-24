@@ -1,9 +1,8 @@
-
 ---
 title: "Customer Shopping Trends - Entity Relationship Model"
 author: "Praveen Kumar Manikanth Gane"
 date: "24-Feb-25"
-**`GitHub Repository`:** [https://github.com/ganepraveen/Advance_db/tree/main/ER_Diagrams_assigment/ER_Diagrams_assigment/ER _Models_HW3](https://github.com/ganepraveen/ER_Diagrams_assigment/ER _Models_HW3/ER_Diagrams_assigment/ER _Models_HW3)
+
 output:
   html_document:
     toc: true
@@ -12,6 +11,7 @@ output:
     df_print: paged
 format: html
 ---
+**`GitHub Repository`:** [https://github.com/ganepraveen/Advance_db/tree/main/ER_Diagrams_assigment/ER _Models_HW3.qmd](https://github.com/ganepraveen/Advance_db/tree/main/ER_Diagrams_assigment/ER _Models_HW3.qmd)
 
 # Project Description
 This report Documents the process of extarcting entities,attributes and relationship from the customershopping dataset.
